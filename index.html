@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Html popup experiment</title>
+    </head>
+    <body>
+        <!-- This is the normal content of the site -->
+        <a id="show">Show popup !</a>
+        | <a id="show2">Show other popup !</a>
+
+        <!-- This layer has to be after the content, and before any popup -->
+        <div id="obscuring-layer"></div>
+
+        <!-- Here are the popups -->
+        <div id="popup"><p> This is text. Awesome, isn't it ?</p><p>(<a id="hide">x</a>)</p></div>
+        <div id="popup2"><p>This is _also_ text. Damn, text everywhere.</p><p>(<a id="hide2">x</a>)</p></div>
+
+        <script type="text/javascript" src="popup.js"></script>
+        <script type="text/javascript">
+            window.onload = function() {
+                register_popup("show", "hide", "popup", "obscuring-layer");
+                register_popup("show2", "hide2", "popup2", "obscuring-layer");
+            }
+        </script>
+        <link rel="stylesheet" href="style-popup.css" />
+    </body>
+</html>
